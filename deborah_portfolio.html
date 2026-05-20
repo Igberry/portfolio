@@ -305,7 +305,7 @@
 
   .plat-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
   }
 
@@ -313,10 +313,10 @@
     aspect-ratio: 1;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
+    gap: .6rem;
     border: 1px solid rgba(14,11,7,.12);
-    font-size: 1.15rem; font-weight: 700;
-    letter-spacing: .06em; text-transform: uppercase;
-    color: var(--ink);
+    font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted);
     transition: all .3s;
     cursor: default;
     position: relative; overflow: hidden;
@@ -336,6 +336,8 @@
   .plat-card:hover { color: var(--cream); border-color: var(--ink); }
 
   .plat-card > * { position: relative; z-index: 1; }
+
+  .plat-icon { font-size: 1.6rem; }
 
   /* ── EXPERIENCE ── */
   .experience { background: var(--ink); color: var(--cream); }
@@ -552,6 +554,121 @@
     opacity: 1; transform: translateY(0);
   }
 
+  /* ── ANALYTICS ── */
+  .analytics-section {
+    background: #0a0906;
+    color: var(--cream);
+    padding: 7rem 5rem;
+  }
+
+  .analytics-header { margin-bottom: 1rem; }
+  .analytics-section .section-title { color: var(--cream); margin-bottom: .8rem; }
+
+  .analytics-intro {
+    font-size: .9rem; line-height: 1.75;
+    color: rgba(245,240,232,.45);
+    max-width: 580px; margin-bottom: 3.5rem;
+  }
+
+  /* tab strip */
+  .a-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid rgba(201,150,58,.18);
+    margin-bottom: 2.5rem;
+  }
+  .a-tab {
+    padding: .6rem 1.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+    color: rgba(245,240,232,.3);
+    background: none; border: none; border-bottom: 2px solid transparent;
+    margin-bottom: -1px; cursor: pointer;
+    transition: color .25s, border-color .25s;
+  }
+  .a-tab.on { color: var(--gold); border-bottom-color: var(--gold); }
+
+  .a-panel { display: none; }
+  .a-panel.on { display: block; }
+
+  /* browser chrome frame */
+  .dash-chrome {
+    background: #111118;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,.6);
+  }
+  .dash-bar {
+    background: #18181f;
+    padding: .75rem 1.2rem;
+    display: flex; align-items: center; gap: .55rem;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .dc { width: 10px; height: 10px; border-radius: 50%; }
+  .dc-r { background: #ff5f57; } .dc-y { background: #febc2e; } .dc-g { background: #28c840; }
+  .dash-addr {
+    margin-left: .5rem; flex: 1;
+    background: rgba(255,255,255,.06); border-radius: 5px;
+    padding: .22rem 1rem; font-size: .65rem;
+    color: rgba(255,255,255,.28); letter-spacing: .03em;
+  }
+  .dash-inner { padding: 1.6rem 1.8rem 2rem; }
+
+  /* KPI strip */
+  .kpi-row {
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: .9rem; margin-bottom: 1.6rem;
+  }
+  .kpi {
+    background: #1a1a24;
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 10px; padding: 1rem 1.1rem;
+  }
+  .kpi-lbl {
+    font-size: .6rem; letter-spacing: .13em; text-transform: uppercase;
+    color: rgba(255,255,255,.28); margin-bottom: .45rem;
+  }
+  .kpi-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.9rem; line-height: 1; margin-bottom: .3rem;
+  }
+  .kpi-chg { font-size: .65rem; }
+  .pos { color: #4ade80; } .neg { color: #f87171; }
+
+  /* two-col chart layout */
+  .chart-row {
+    display: grid; grid-template-columns: 1.55fr 1fr;
+    gap: .9rem;
+  }
+  .chart-box {
+    background: #1a1a24;
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 10px; padding: 1.1rem 1.3rem;
+  }
+  .chart-lbl {
+    font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(255,255,255,.28); margin-bottom: 1rem;
+  }
+
+  /* bar chart */
+  .bars { display: flex; align-items: flex-end; gap: .5rem; height: 80px; }
+  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: .3rem; }
+  .bar { width: 100%; border-radius: 3px 3px 0 0; }
+  .bar-x { font-size: .52rem; color: rgba(255,255,255,.22); }
+
+  /* sparklines */
+  .spark { margin-bottom: .65rem; display: flex; align-items: center; gap: .6rem; }
+  .spark-lbl { font-size: .63rem; color: rgba(255,255,255,.35); width: 68px; flex-shrink:0; }
+  .spark-track { flex:1; height: 4px; background: rgba(255,255,255,.07); border-radius: 2px; overflow:hidden; }
+  .spark-fill { height: 100%; border-radius: 2px; }
+  .spark-num { font-size: .63rem; color: rgba(255,255,255,.28); width: 38px; text-align:right; flex-shrink:0; }
+
+  /* donut */
+  .donut-row { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.3rem; }
+  .leg { display: flex; flex-direction: column; gap: .45rem; }
+  .leg-item { display: flex; align-items: center; gap: .45rem; font-size: .64rem; color: rgba(255,255,255,.42); }
+  .leg-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink:0; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
@@ -562,9 +679,12 @@
     section { padding: 5rem 1.5rem; }
     .about, .content-section { grid-template-columns: 1fr; gap: 3rem; }
     .expertise-grid { grid-template-columns: 1fr; }
-    .plat-grid { grid-template-columns: repeat(3, 1fr); font-size: .85rem; }
+    .plat-grid { grid-template-columns: repeat(3, 1fr); }
     .skills-grid { grid-template-columns: 1fr; }
     .contact-details { flex-direction: column; gap: 1.5rem; }
+    .analytics-section { padding: 5rem 1.5rem; }
+    .kpi-row { grid-template-columns: repeat(2,1fr); }
+    .chart-row { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -577,6 +697,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#analytics">Analytics</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -608,6 +729,7 @@
         <div class="plat-chip">FB</div>
         <div class="plat-chip">X</div>
         <div class="plat-chip">LI</div>
+        <div class="plat-chip">TT</div>
         <div class="plat-chip">YT</div>
       </div>
       <div class="hero-badge">
@@ -715,11 +837,30 @@
     <p style="font-size:.9rem;color:var(--muted);max-width:300px;line-height:1.6">Active across the major platforms — personally and professionally.</p>
   </div>
   <div class="plat-grid reveal">
-    <div class="plat-card"><span>Instagram</span></div>
-    <div class="plat-card"><span>Facebook</span></div>
-    <div class="plat-card"><span>LinkedIn</span></div>
-    <div class="plat-card"><span>TikTok</span></div>
-    <div class="plat-card"><span>YouTube</span></div>
+    <div class="plat-card">
+      <div class="plat-icon">📸</div>
+      <span>Instagram</span>
+    </div>
+    <div class="plat-card">
+      <div class="plat-icon">👥</div>
+      <span>Facebook</span>
+    </div>
+    <div class="plat-card">
+      <div class="plat-icon">✖️</div>
+      <span>Twitter / X</span>
+    </div>
+    <div class="plat-card">
+      <div class="plat-icon">💼</div>
+      <span>LinkedIn</span>
+    </div>
+    <div class="plat-card">
+      <div class="plat-icon">🎵</div>
+      <span>TikTok</span>
+    </div>
+    <div class="plat-card">
+      <div class="plat-icon">▶️</div>
+      <span>YouTube</span>
+    </div>
   </div>
 </section>
 
@@ -834,6 +975,309 @@
   </div>
 </section>
 
+<!-- ANALYTICS -->
+<section class="analytics-section" id="analytics">
+  <div class="analytics-header reveal">
+    <p class="section-label">Analytics in Action</p>
+    <h2 class="section-title">Data Behind the Content</h2>
+    <p class="analytics-intro">
+      Good content is intentional. Below are performance snapshots from two platforms I manage — showing how I track reach, engagement, and audience behaviour to make smarter content decisions.
+    </p>
+  </div>
+
+  <div class="reveal">
+    <!-- Tab strip -->
+    <div class="a-tabs">
+      <button class="a-tab on" onclick="switchTab(event,'ig')">📸&nbsp; Instagram Insights</button>
+      <button class="a-tab" onclick="switchTab(event,'tt')">🎵&nbsp; TikTok Analytics</button>
+    </div>
+
+    <!-- ── INSTAGRAM PANEL ── -->
+    <div class="a-panel on" id="a-ig">
+      <div class="dash-chrome">
+        <div class="dash-bar">
+          <div class="dc dc-r"></div><div class="dc dc-y"></div><div class="dc dc-g"></div>
+          <div class="dash-addr">instagram.com › Professional Dashboard &nbsp;·&nbsp; Overview &nbsp;·&nbsp; Last 30 days</div>
+        </div>
+        <div class="dash-inner">
+
+          <!-- KPIs -->
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="kpi-lbl">Accounts Reached</div>
+              <div class="kpi-val" style="color:#e1306c">14.2K</div>
+              <div class="kpi-chg pos">▲ 18.4 % vs prev. period</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-lbl">Total Impressions</div>
+              <div class="kpi-val" style="color:#f77737">38.6K</div>
+              <div class="kpi-chg pos">▲ 22.1 %</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-lbl">Engagement Rate</div>
+              <div class="kpi-val" style="color:#c9963a">6.8 %</div>
+              <div class="kpi-chg pos">▲ 1.2 pts</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-lbl">Profile Visits</div>
+              <div class="kpi-val" style="color:#a78fff">3,104</div>
+              <div class="kpi-chg pos">▲ 9.7 %</div>
+            </div>
+          </div>
+
+          <!-- Charts -->
+          <div class="chart-row">
+
+            <!-- Left: reach bars + engagement sparklines -->
+            <div class="chart-box">
+              <div class="chart-lbl">Weekly Reach — Last 4 Weeks</div>
+              <div class="bars">
+                <div class="bar-col">
+                  <div class="bar" style="height:42px;background:linear-gradient(180deg,#e1306c99,#833ab455)"></div>
+                  <div class="bar-x">Wk 1</div>
+                </div>
+                <div class="bar-col">
+                  <div class="bar" style="height:58px;background:linear-gradient(180deg,#e1306cbb,#833ab477)"></div>
+                  <div class="bar-x">Wk 2</div>
+                </div>
+                <div class="bar-col">
+                  <div class="bar" style="height:50px;background:linear-gradient(180deg,#e1306cbb,#833ab477)"></div>
+                  <div class="bar-x">Wk 3</div>
+                </div>
+                <div class="bar-col">
+                  <div class="bar" style="height:80px;background:linear-gradient(180deg,#fd1d1d,#e1306c)"></div>
+                  <div class="bar-x">Wk 4</div>
+                </div>
+              </div>
+              <!-- SVG line sparkline overlay -->
+              <svg viewBox="0 0 200 40" width="100%" height="40" style="margin:1rem 0 .6rem;opacity:.4">
+                <polyline points="0,32 50,18 100,24 150,8 200,4"
+                  fill="none" stroke="#e1306c" stroke-width="1.8" stroke-linejoin="round"/>
+                <polyline points="0,32 50,18 100,24 150,8 200,4"
+                  fill="url(#igGrad)" stroke="none" opacity=".25"/>
+                <defs>
+                  <linearGradient id="igGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#e1306c"/>
+                    <stop offset="100%" stop-color="transparent"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              <div style="margin-top:.4rem">
+                <div class="spark">
+                  <div class="spark-lbl">Likes</div>
+                  <div class="spark-track"><div class="spark-fill" style="width:82%;background:#e1306c"></div></div>
+                  <div class="spark-num">4,821</div>
+                </div>
+                <div class="spark">
+                  <div class="spark-lbl">Comments</div>
+                  <div class="spark-track"><div class="spark-fill" style="width:32%;background:#fd1d1d"></div></div>
+                  <div class="spark-num">612</div>
+                </div>
+                <div class="spark">
+                  <div class="spark-lbl">Shares</div>
+                  <div class="spark-track"><div class="spark-fill" style="width:26%;background:#833ab4"></div></div>
+                  <div class="spark-num">318</div>
+                </div>
+                <div class="spark">
+                  <div class="spark-lbl">Saves</div>
+                  <div class="spark-track"><div class="spark-fill" style="width:48%;background:#f77737"></div></div>
+                  <div class="spark-num">741</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: donut + age bars -->
+            <div class="chart-box">
+              <div class="chart-lbl">Audience Demographics</div>
+              <div class="donut-row">
+                <svg width="84" height="84" viewBox="0 0 36 36" style="flex-shrink:0">
+                  <circle cx="18" cy="18" r="13" fill="none" stroke="#22222e" stroke-width="5.5"/>
+                  <!-- Women 45% -->
+                  <circle cx="18" cy="18" r="13" fill="none" stroke="#e1306c" stroke-width="5.5"
+                    stroke-dasharray="36.7 45.3" stroke-dashoffset="0" transform="rotate(-90 18 18)"/>
+                  <!-- Men 40% -->
+                  <circle cx="18" cy="18" r="13" fill="none" stroke="#833ab4" stroke-width="5.5"
+                    stroke-dasharray="32.7 49.3" stroke-dashoffset="-36.7" transform="rotate(-90 18 18)"/>
+                  <!-- Other 15% -->
+                  <circle cx="18" cy="18" r="13" fill="none" stroke="#f77737" stroke-width="5.5"
+                    stroke-dasharray="12.6 69.4" stroke-dashoffset="-69.4" transform="rotate(-90 18 18)"/>
+                </svg>
+                <div class="leg">
+                  <div class="leg-item"><div class="leg-dot" style="background:#e1306c"></div>Women · 45 %</div>
+                  <div class="leg-item"><div class="leg-dot" style="background:#833ab4"></div>Men · 40 %</div>
+                  <div class="leg-item"><div class="leg-dot" style="background:#f77737"></div>Other · 15 %</div>
+                </div>
+              </div>
+              <div class="chart-lbl">Top Age Groups</div>
+              <div class="spark">
+                <div class="spark-lbl">18 – 24</div>
+                <div class="spark-track"><div class="spark-fill" style="width:70%;background:#e1306c"></div></div>
+                <div class="spark-num">35 %</div>
+              </div>
+              <div class="spark">
+                <div class="spark-lbl">25 – 34</div>
+                <div class="spark-track"><div class="spark-fill" style="width:56%;background:#833ab4"></div></div>
+                <div class="spark-num">28 %</div>
+              </div>
+              <div class="spark">
+                <div class="spark-lbl">35 – 44</div>
+                <div class="spark-track"><div class="spark-fill" style="width:30%;background:#f77737"></div></div>
+                <div class="spark-num">16 %</div>
+              </div>
+              <div class="spark">
+                <div class="spark-lbl">45 +</div>
+                <div class="spark-track"><div class="spark-fill" style="width:18%;background:#c9963a"></div></div>
+                <div class="spark-num">10 %</div>
+              </div>
+            </div>
+          </div><!-- /chart-row -->
+        </div><!-- /dash-inner -->
+      </div><!-- /dash-chrome -->
+    </div><!-- /ig panel -->
+
+    <!-- ── TIKTOK PANEL ── -->
+    <div class="a-panel" id="a-tt">
+      <div class="dash-chrome">
+        <div class="dash-bar">
+          <div class="dc dc-r"></div><div class="dc dc-y"></div><div class="dc dc-g"></div>
+          <div class="dash-addr">tiktok.com › Creator Studio &nbsp;·&nbsp; Overview &nbsp;·&nbsp; Last 28 days</div>
+        </div>
+        <div class="dash-inner">
+
+          <!-- KPIs -->
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="kpi-lbl">Video Views</div>
+              <div class="kpi-val" style="color:#69c9d0">52.1K</div>
+              <div class="kpi-chg pos">▲ 31.6 %</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-lbl">Profile Views</div>
+              <div class="kpi-val" style="color:#ee1d52">6,840</div>
+              <div class="kpi-chg pos">▲ 14.3 %</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-lbl">Avg. Watch Time</div>
+              <div class="kpi-val" style="color:#c9963a">12.4 s</div>
+              <div class="kpi-chg pos">▲ 2.1 s</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-lbl">New Followers</div>
+              <div class="kpi-val" style="color:#a78fff">+ 284</div>
+              <div class="kpi-chg pos">▲ 7.2 %</div>
+            </div>
+          </div>
+
+          <!-- Charts -->
+          <div class="chart-row">
+            <div class="chart-box">
+              <div class="chart-lbl">Video Views — Last 4 Weeks</div>
+              <div class="bars">
+                <div class="bar-col">
+                  <div class="bar" style="height:33px;background:linear-gradient(180deg,#69c9d077,#ee1d5244)"></div>
+                  <div class="bar-x">Wk 1</div>
+                </div>
+                <div class="bar-col">
+                  <div class="bar" style="height:50px;background:linear-gradient(180deg,#69c9d099,#ee1d5266)"></div>
+                  <div class="bar-x">Wk 2</div>
+                </div>
+                <div class="bar-col">
+                  <div class="bar" style="height:67px;background:linear-gradient(180deg,#69c9d0bb,#ee1d5288)"></div>
+                  <div class="bar-x">Wk 3</div>
+                </div>
+                <div class="bar-col">
+                  <div class="bar" style="height:80px;background:linear-gradient(180deg,#69c9d0,#ee1d52)"></div>
+                  <div class="bar-x">Wk 4</div>
+                </div>
+              </div>
+              <!-- SVG trend line -->
+              <svg viewBox="0 0 200 40" width="100%" height="40" style="margin:1rem 0 .6rem;opacity:.4">
+                <polyline points="0,36 50,26 100,16 150,8 200,3"
+                  fill="none" stroke="#69c9d0" stroke-width="1.8" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="ttGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#69c9d0"/>
+                    <stop offset="100%" stop-color="transparent"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              <div style="margin-top:.4rem">
+                <div class="spark">
+                  <div class="spark-lbl">Likes</div>
+                  <div class="spark-track"><div class="spark-fill" style="width:76%;background:#ee1d52"></div></div>
+                  <div class="spark-num">7,430</div>
+                </div>
+                <div class="spark">
+                  <div class="spark-lbl">Comments</div>
+                  <div class="spark-track"><div class="spark-fill" style="width:22%;background:#69c9d0"></div></div>
+                  <div class="spark-num">480</div>
+                </div>
+                <div class="spark">
+                  <div class="spark-lbl">Shares</div>
+                  <div class="spark-track"><div class="spark-fill" style="width:38%;background:#ffffff88"></div></div>
+                  <div class="spark-num">1,126</div>
+                </div>
+                <div class="spark">
+                  <div class="spark-lbl">Completion %</div>
+                  <div class="spark-track"><div class="spark-fill" style="width:62%;background:#c9963a"></div></div>
+                  <div class="spark-num">62 %</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-box">
+              <div class="chart-lbl">Traffic Sources</div>
+              <div class="donut-row">
+                <svg width="84" height="84" viewBox="0 0 36 36" style="flex-shrink:0">
+                  <circle cx="18" cy="18" r="13" fill="none" stroke="#22222e" stroke-width="5.5"/>
+                  <!-- FYP 50% -->
+                  <circle cx="18" cy="18" r="13" fill="none" stroke="#ee1d52" stroke-width="5.5"
+                    stroke-dasharray="40.8 41.2" stroke-dashoffset="0" transform="rotate(-90 18 18)"/>
+                  <!-- Following 30% -->
+                  <circle cx="18" cy="18" r="13" fill="none" stroke="#69c9d0" stroke-width="5.5"
+                    stroke-dasharray="24.5 57.5" stroke-dashoffset="-40.8" transform="rotate(-90 18 18)"/>
+                  <!-- Hashtags 20% -->
+                  <circle cx="18" cy="18" r="13" fill="none" stroke="#c9963a" stroke-width="5.5"
+                    stroke-dasharray="16.3 65.7" stroke-dashoffset="-65.3" transform="rotate(-90 18 18)"/>
+                </svg>
+                <div class="leg">
+                  <div class="leg-item"><div class="leg-dot" style="background:#ee1d52"></div>For You Page · 50 %</div>
+                  <div class="leg-item"><div class="leg-dot" style="background:#69c9d0"></div>Following · 30 %</div>
+                  <div class="leg-item"><div class="leg-dot" style="background:#c9963a"></div>Hashtags · 20 %</div>
+                </div>
+              </div>
+              <div class="chart-lbl">Top Viewer Locations</div>
+              <div class="spark">
+                <div class="spark-lbl">Nigeria</div>
+                <div class="spark-track"><div class="spark-fill" style="width:65%;background:#ee1d52"></div></div>
+                <div class="spark-num">65 %</div>
+              </div>
+              <div class="spark">
+                <div class="spark-lbl">Ghana</div>
+                <div class="spark-track"><div class="spark-fill" style="width:14%;background:#69c9d0"></div></div>
+                <div class="spark-num">14 %</div>
+              </div>
+              <div class="spark">
+                <div class="spark-lbl">UK</div>
+                <div class="spark-track"><div class="spark-fill" style="width:12%;background:#c9963a"></div></div>
+                <div class="spark-num">12 %</div>
+              </div>
+              <div class="spark">
+                <div class="spark-lbl">US</div>
+                <div class="spark-track"><div class="spark-fill" style="width:9%;background:#a78fff"></div></div>
+                <div class="spark-num">9 %</div>
+              </div>
+            </div>
+          </div><!-- /chart-row -->
+        </div><!-- /dash-inner -->
+      </div><!-- /dash-chrome -->
+    </div><!-- /tt panel -->
+
+  </div><!-- /reveal -->
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="reveal">
@@ -867,6 +1311,14 @@
 </footer>
 
 <script>
+  // Analytics tab switcher
+  function switchTab(e, id) {
+    document.querySelectorAll('.a-panel').forEach(p => p.classList.remove('on'));
+    document.querySelectorAll('.a-tab').forEach(t => t.classList.remove('on'));
+    document.getElementById('a-' + id).classList.add('on');
+    e.currentTarget.classList.add('on');
+  }
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
